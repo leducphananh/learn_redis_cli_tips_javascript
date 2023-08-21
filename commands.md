@@ -43,3 +43,20 @@ linsert `key` BEFORE|AFTER `pivot` `element` -> insert before (after) phần t�
 lindex `key` `index` -> lấy phần tử index
 
 sort `key` (desc) ALPHA -> sắp xếp
+
+## Redis sets
+
+sadd `key` `element` [element...]
+smembers `key` -> lấy tất cả phần tử
+scard `key` -> lấy độ dài
+
+sismember `key` `element` -> kiểm tra xem element đã có hay chưa
+
+sdiff `key1` [key2...] -> trả về các phần tử của key1 khác key2
+sdiffstore `destination` `key1` [key2...] -> lưu các phần tử key1 khác key2 vào một destination set
+
+sinter `key1` [key2...] -> trả về các phần tử giống nhau của key1 và key2
+sinterstore `destination` `key1` [key2...] -> lưu các phần tử key1 giống key2 vào một destination set
+
+sunion `key1` [key2...] -> trả về tất cả các phần từ (không trùng nhau) của key1 và key2
+sunionstore `destination` `key1` [key2...] -> lưu tất cả các phần tử (không trùng nhau) của key1 và key2 vào một destination set
